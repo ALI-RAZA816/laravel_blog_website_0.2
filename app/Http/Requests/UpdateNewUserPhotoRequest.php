@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateNewUserPhotoRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return $this->user()?->can('manage-users') ?? false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:3072',
+        ];
+    }
+
+        public function messages(): array
+    {
+        return [
+            'image.mimes'=>'File type must be png,jpeg,jpg',
+            'image.max'=>'File size must be 3MB or less',
+        ];
+    }
+}

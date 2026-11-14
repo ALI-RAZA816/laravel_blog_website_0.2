@@ -1,0 +1,225 @@
+/* =====================================================
+   Admin panel - responsive overrides (desktop / tablet / mobile)
+   Loaded last in layouts/admin.blade.php so it wins over page CSS.
+   Breakpoints: <=1199 (small laptop), <=991 (tablet: sidebar becomes off-canvas),
+                <=767 (large phone), <=575 (phone)
+   ===================================================== */
+
+html, body { overflow-x: hidden; }
+img, canvas { max-width: 100%; }
+
+/* hamburger + close + overlay: hidden on desktop */
+.admin-menu-toggle,
+.admin-sidebar-close,
+.admin-sidebar-overlay { display: none; }
+
+.admin-header-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.admin-main { min-width: 0; }
+.admin-content { min-width: 0; }
+.header-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* =========== Tablet + mobile: off-canvas sidebar =========== */
+@media (max-width: 991.98px) {
+    .admin-main { margin-left: 0; }
+
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform .28s ease;
+        width: 280px;
+        max-width: 85vw;
+        z-index: 1050;
+        overflow-y: auto;
+        box-shadow: none;
+    }
+
+    .admin-sidebar.is-open {
+        transform: translateX(0);
+        box-shadow: 8px 0 30px rgba(0, 0, 0, .25);
+    }
+
+    .admin-sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .28s ease, visibility .28s ease;
+        z-index: 1040;
+    }
+
+    .admin-sidebar-overlay.is-open { opacity: 1; visibility: visible; }
+    body.admin-sidebar-open { overflow: hidden; }
+
+    .admin-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        background: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        color: #111;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .admin-sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 34px;
+        height: 34px;
+        background: rgba(255, 255, 255, .08);
+        border: 0;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .admin-header { padding: 0 1.25rem; position: sticky; top: 0; z-index: 900; }
+    .admin-content { padding: 1.5rem 1rem; }
+
+    /* pages wrap their content in .container-fluid.px-4 */
+    .admin-content .container-fluid { padding-left: .5rem !important; padding-right: .5rem !important; }
+}
+
+/* =========== Shared page parts =========== */
+@media (max-width: 991.98px) {
+    .page-header-row { flex-wrap: wrap; gap: 1rem; }
+    .page-title { font-size: 1.7rem; }
+
+    .filters-row { gap: .75rem; }
+    .filters-row .search-box { max-width: none; flex: 1 1 240px; }
+    .filters-row .category-select { flex: 1 1 180px; width: auto; }
+
+    .table-header-custom, .panel-header { flex-wrap: wrap; gap: .75rem; }
+
+    /* Bootstrap tables scroll sideways instead of squashing */
+    .table-responsive { -webkit-overflow-scrolling: touch; }
+    .admin-table { min-width: 680px; }
+
+    .chart-container { height: 260px; }
+}
+
+@media (max-width: 767.98px) {
+    .admin-header { height: 64px; }
+    .header-right { gap: 1rem; }
+    .user-info { display: none; }
+
+    .page-title { font-size: 1.5rem; }
+    .page-header-row > a,
+    .page-header-row > button { width: 100%; }
+    .page-header-row > a button,
+    .page-header-row > button { width: 100%; justify-content: center; }
+
+    .filters-row { flex-direction: column; align-items: stretch; }
+    .filters-row .search-box,
+    .filters-row .category-select { flex: none; width: 100%; }
+    .status-tabs, .filter-tabs { overflow-x: auto; max-width: 100%; }
+    .status-tab, .filter-tab { white-space: nowrap; padding-left: 1rem; padding-right: 1rem; }
+
+    .filter-controls { flex-direction: column; align-items: stretch; width: 100%; }
+    .filter-controls .search-input,
+    .filter-controls .select-filter { width: 100%; }
+
+    .bottom-cards-row { grid-template-columns: 1fr; }
+
+    .pagination-row {
+        flex-direction: column;
+        gap: .75rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    .pagination-controls { flex-wrap: wrap; justify-content: center; }
+
+    .stat-card, .panel-card, .content-card { padding: 1.15rem; }
+    .stat-value { font-size: 1.6rem; }
+    .comment-excerpt { max-width: 100%; }
+}
+
+@media (max-width: 575.98px) {
+    .admin-content { padding: 1rem .5rem; }
+    .admin-header { padding: 0 .85rem; }
+    .header-title { font-size: 1rem; }
+    .admin-content .container-fluid { padding-left: .25rem !important; padding-right: .25rem !important; }
+}
+
+/* =========== Form pages (add/edit post, add/edit user, settings, post preview) =========== */
+@media (max-width: 991.98px) {
+    .editor-layout,
+    .form-layout,
+    .settings-layout,
+    .preview-layout { flex-direction: column; }
+
+    .editor-sidebar,
+    .form-sidebar,
+    .settings-sidebar,
+    .preview-sidebar { width: 100%; }
+
+    .preview-main { width: 100%; }
+}
+
+@media (max-width: 575.98px) {
+    .post-hero { height: 220px; }
+    .note-editor.note-frame { max-width: 100%; }
+    .note-editor .note-toolbar { overflow-x: auto; }
+    .note-editor .note-editable { min-height: 200px; }
+}
+
+/* =========== Category slide-in panel (add / update) =========== */
+.add-category-sidebar,
+.update-category-sidebar {
+    width: 420px;
+    max-width: 100vw;
+    overflow-y: auto;
+    z-index: 1060;
+}
+
+@media (max-width: 575.98px) {
+    .add-category-sidebar,
+    .update-category-sidebar { padding: 1.25rem; }
+}
+
+/* =========== Messages page =========== */
+@media (max-width: 1199.98px) {
+    .msg-sidebar { width: 320px; }
+}
+
+@media (max-width: 991.98px) {
+    .messages-layout {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    .msg-sidebar {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .msg-list { max-height: 360px; overflow-y: auto; }
+
+    .msg-detail { min-height: 420px; }
+    .msg-detail-content { max-height: none; min-height: 220px; padding: 1.25rem; }
+    .msg-detail-header { flex-wrap: wrap; gap: .75rem; padding: 1rem; }
+    .email-meta { flex-wrap: wrap; }
+    .email-body, .email-subject { overflow-wrap: anywhere; }
+    .page-footer, .footer-left { flex-wrap: wrap; gap: .5rem; }
+}
+
+/* touch screens have no hover: always show per-message action icons */
+@media (hover: none) {
+    .msg-actions { opacity: 1; visibility: visible; }
+    .msg-item:hover .msg-item-date { display: inline; }
+}
+
+/* =========== Long text never breaks the layout =========== */
+.post-title-main, .post-slug, .comment-excerpt { overflow-wrap: anywhere; }

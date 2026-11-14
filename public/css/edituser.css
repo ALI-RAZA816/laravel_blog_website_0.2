@@ -1,0 +1,383 @@
+/* ============================
+   Edit User Page Specific
+   ============================ */
+body {
+    background-color: #f4f5f7;
+    font-family: 'Inter', sans-serif;
+    color: #111;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, .serif-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Page Header */
+.page-header-row {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    color: #111;
+    margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Layout Grid */
+.form-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.form-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-sidebar {
+    width: 360px;
+    flex-shrink: 0;
+}
+
+/* ============================
+   Cards
+   ============================ */
+.form-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-title-header {
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+
+/* ============================
+   Avatar Section
+   ============================ */
+.avatar-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #c5b6a1; /* Beige color matching image */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Creating the abstract user icon with CSS to match screenshot */
+.avatar-profile::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+}
+
+.avatar-profile::after {
+    content: '';
+    width: 70px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    bottom: -10px;
+}
+
+.change-photo-link {
+    display: block;
+    font-size: 0.85rem;
+    color: #111;
+    text-decoration: underline;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.change-photo-link:hover {
+    color: #6b7280;
+}
+
+/* ============================
+   Form Inputs
+   ============================ */
+.form-group-custom {
+    margin-bottom: 1.25rem;
+}
+
+.form-label-custom {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.form-control-custom {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #111;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-control-custom:focus {
+    border-color: #111;
+}
+
+textarea.form-control-custom {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Sidebar Select */
+.form-select-custom {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #111;
+    background-color: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    outline: none;
+    cursor: pointer;
+}
+
+/* ============================
+   Toggles (Account & 2FA)
+   ============================ */
+toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.toggle-text h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    color: #111;
+}
+
+.toggle-text p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Custom Toggle Design */
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background-color: #e5e7eb; /* Off state grey */
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px; /* Left side for Off state */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.toggle-switch.active {
+    background-color: #10b981;   /* green — apni theme ka color daalein */
+}
+
+.toggle-switch.active .toggle-thumb {
+    left: 22px;                  /* right side par slide */
+}
+
+.toggle-thumb {
+    transition: left 0.25s ease;
+}
+
+.toggle-switch {
+    transition: background-color 0.25s ease;
+}
+
+/* ============================
+   Security Section (Reset Link)
+   ============================ */
+.btn-reset-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.6rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-reset-link:hover {
+    background: #f9fafb;
+}
+
+.last-changed-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Divider for Security */
+.security-divider {
+    border-top: 1px solid #f3f4f6;
+    margin: 1.5rem 0;
+}
+
+/* Save Button */
+.btn-save {
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #333;
+}
+
+.upload-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px dashed #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    background: #f9fafb;
+    transition: border-color 0.2s;
+}
+
+.upload-circle:hover {
+    border-color: #6b7280;
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #6b7280;
+    font-size: 0.75rem;
+}
+
+.upload-placeholder i {
+    font-size: 1.5rem;
+}
+
+.upload-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.remove-image {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.remove-image:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .form-layout {
+        flex-direction: column;
+    }
+    .form-sidebar {
+        width: 100%;
+    }
+}

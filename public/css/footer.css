@@ -1,0 +1,98 @@
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: 64px 0 0;
+}
+
+.site-footer__inner {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+
+.site-footer__top {
+    display: grid;
+    grid-template-columns: 550px 330px 1fr;
+    padding-bottom: 80px;
+}
+
+.site-footer__logo {
+    display: inline-block;
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+}
+
+.site-footer__desc {
+    max-width: 340px;
+    font-size: 14.5px;
+    line-height: 25px;
+    color: #999;
+}
+
+.site-footer__title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 4px 0 22px;
+}
+
+.site-footer__links li { margin-bottom: 16px; }
+
+.site-footer__links a {
+    font-size: 14.5px;
+    color: #aaa;
+    transition: color .2s;
+}
+
+.site-footer__links a:hover { color: #fff; }
+
+.site-footer__social { display: flex; gap: 12px; }
+
+.site-footer__social a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    transition: all .2s;
+}
+
+.site-footer__social a:hover {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+}
+
+.site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #262626;
+    padding: 20px 0 24px;
+    font-size: 12.5px;
+    color: #888;
+}
+
+.site-footer__legal { display: flex; gap: 24px; }
+.site-footer__legal a:hover { color: #fff; }
+
+@media (max-width: 1340px) {
+    .site-footer__inner { padding: 0 24px; }
+}
+
+@media (max-width: 992px) {
+    .site-footer__top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 576px) {
+    .site-footer__top { grid-template-columns: 1fr; padding-bottom: 48px; }
+    .site-footer__bottom { flex-direction: column; gap: 12px; }
+}

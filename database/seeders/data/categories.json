@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Technology",
+    "slug": "technology",
+    "description": "Articles about technology",
+    "icon": "fa-microchip",
+    "post_count": 6,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 2,
+    "name": "Health",
+    "slug": "health",
+    "description": "Articles about health",
+    "icon": "fa-heart-pulse",
+    "post_count": 12,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 3,
+    "name": "Travel",
+    "slug": "travel",
+    "description": "Articles about travel",
+    "icon": "fa-plane",
+    "post_count": 17,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 4,
+    "name": "Food",
+    "slug": "food",
+    "description": "Articles about food",
+    "icon": "fa-utensils",
+    "post_count": 11,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 5,
+    "name": "Lifestyle",
+    "slug": "lifestyle",
+    "description": "Articles about lifestyle",
+    "icon": "fa-leaf",
+    "post_count": 10,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 6,
+    "name": "Education",
+    "slug": "education",
+    "description": "Articles about education",
+    "icon": "fa-book-open",
+    "post_count": 12,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 7,
+    "name": "Business",
+    "slug": "business",
+    "description": "Articles about business",
+    "icon": "fa-briefcase",
+    "post_count": 12,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  },
+  {
+    "id": 8,
+    "name": "Mindfulness",
+    "slug": "mindfulness",
+    "description": "Articles about mindfulness",
+    "icon": "fa-brain",
+    "post_count": 20,
+    "created_at": "2025-12-08 12:00:00",
+    "updated_at": "2025-12-08 12:00:00"
+  }
+]

@@ -1,0 +1,305 @@
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    height: 68px;
+}
+
+.site-header__inner {
+    max-width: 1160px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header__logo {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.2px;
+}
+
+.site-header__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.site-header__menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.site-header__link {
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #777;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    transition: color .2s;
+}
+
+.site-header__link:hover {
+    color: #111;
+}
+
+.site-header__link.active {
+    color: #111;
+    border-bottom-color: #111;
+}
+
+.site-header__auth {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.site-header__login {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.site-header__register {
+    background: #111;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 14px 23px;
+    border-radius: 2px;
+    transition: background .2s;
+}
+
+.site-header__register:hover {
+    background: #333;
+}
+
+/* Hamburger button (hidden on desktop) */
+.site-header { position: relative; z-index: 1030; }
+
+.site-header__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.site-header__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #111;
+    transition: transform .25s, opacity .25s;
+}
+
+.site-header__toggle.is-open .site-header__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header__toggle.is-open .site-header__bar:nth-child(2) { opacity: 0; }
+.site-header__toggle.is-open .site-header__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1200px) {
+    .site-header__inner { padding: 0 24px; }
+}
+
+/* Tablet + mobile: links open from the hamburger */
+@media (max-width: 991.98px) {
+    .site-header__inner { padding: 0 20px; }
+    .site-header__toggle { display: flex; }
+
+    .site-header__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid #e8e8e8;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, .08);
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 8px 20px 20px;
+        max-height: calc(100vh - 68px);
+        overflow-y: auto;
+    }
+
+    .site-header__nav.is-open { display: flex; }
+
+    .site-header__menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .site-header__menu li { border-bottom: 1px solid #f1f1f1; }
+
+    .site-header__link {
+        display: block;
+        padding: 16px 0;
+        border-bottom: 0;
+    }
+
+    .site-header__link.active { border-bottom: 0; font-weight: 700; }
+
+    .site-header__auth {
+        flex-direction: row;
+        gap: 12px;
+        padding-top: 18px;
+    }
+
+    .site-header__login,
+    .site-header__register {
+        flex: 1;
+        text-align: center;
+        padding: 14px 16px;
+    }
+
+    .site-header__login { border: 1px solid #111; border-radius: 2px; }
+
+    .user-profile-wrapper { display: block; padding-top: 16px; }
+
+    .user-dropdown {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+        box-shadow: none;
+        transform: none;
+        display: none;
+    }
+
+    .user-dropdown.show { display: block; }
+}
+
+/* ============================
+   User Avatar & Dropdown Styling
+   ============================ */
+.user-profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Avatar Circle */
+.user-avatar-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #111; /* Black background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    overflow: hidden; /* Image ko circle ke andar rakhne ke liye */
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.user-avatar-circle:hover {
+    border-color: #6b7280;
+}
+
+/* Agar Image ho toh usko circle ke andar fit karo */
+.user-avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Avatar Initials (AR, SK waghaira) */
+.avatar-initials {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Dropdown Menu */
+.user-dropdown {
+    position: absolute;
+    top: 55px; /* Avatar ke bilkul neeche */
+    right: 0;
+    width: 220px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+    
+    /* By default hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+/* Jab active class lagey toh show ho */
+.user-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Content */
+.dropdown-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdown-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.dropdown-email {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.dropdown-divider {
+    margin: 0.75rem 0;
+    border-color: #f3f4f6;
+    opacity: 1;
+}
+
+/* Logout Button */
+.dropdown-logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    color: #dc2626; /* Red color for logout */
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+}
+
+.dropdown-logout-btn:hover {
+    background-color: #fef2f2; /* Light red background */
+}

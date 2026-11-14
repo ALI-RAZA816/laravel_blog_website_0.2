@@ -1,0 +1,107 @@
+/* =====================================================
+   Public site - responsive overrides (desktop / tablet / mobile)
+   Loaded last in layouts/app.blade.php so it wins over page CSS.
+   Breakpoints: <=1199 (small laptop), <=991 (tablet), <=767 (large phone), <=575 (phone)
+   ===================================================== */
+
+html, body { overflow-x: hidden; }
+img, video, iframe { max-width: 100%; }
+
+/* ---------- Footer ---------- */
+@media (max-width: 991.98px) {
+    .site-footer { padding-top: 48px; }
+    .site-footer__top { padding-bottom: 48px; }
+    .site-footer__desc { max-width: 100%; }
+}
+
+@media (max-width: 575.98px) {
+    .site-footer__inner { padding: 0 20px; }
+    .site-footer__bottom { text-align: center; align-items: center; }
+    .site-footer__legal { flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
+}
+
+/* ---------- Home ---------- */
+@media (max-width: 991.98px) {
+    .hero { height: auto; min-height: 380px; }
+    .hero__content { padding: 70px 32px 56px; max-width: 100%; }
+    .hero__title { font-size: 36px; }
+    .content { margin-top: 36px; gap: 40px; }
+
+    /* sidebar widgets sit side by side on tablet */
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 32px;
+        align-items: start;
+    }
+    .sidebar .newsletter { grid-column: 1 / -1; margin-top: 0; }
+}
+
+@media (max-width: 767.98px) {
+    .sidebar { grid-template-columns: 1fr; }
+    .main { padding-bottom: 56px; }
+    .pagination-row { flex-direction: column; gap: 12px; padding: 1rem 0; text-align: center; }
+}
+
+@media (max-width: 575.98px) {
+    .main { padding-left: 16px; padding-right: 16px; padding-top: 16px; }
+    .hero { min-height: 340px; }
+    .hero__content { padding: 56px 20px 40px; }
+    .hero__title { font-size: 28px; }
+    .hero__text { font-size: 14.5px; line-height: 24px; }
+    .card__image { height: 200px; }
+    .card__title { font-size: 19px; }
+    .stories__heading { font-size: 22px; }
+    .newsletter { padding: 28px 20px 24px; }
+    .tags__item { font-size: 12.5px; padding: 8px 12px; }
+}
+
+/* ---------- Single post view ---------- */
+@media (max-width: 991.98px) {
+    .post-hero { min-height: 360px; }
+    .post-hero-title { font-size: 2.4rem; }
+}
+
+@media (max-width: 575.98px) {
+    .post-hero { min-height: 280px; margin-bottom: 1.25rem; }
+    .post-hero-title { font-size: 1.7rem; }
+    .post-hero-content { padding: 0 .5rem; }
+    .post-category-badge { font-size: .8rem; }
+    .article-body, .author-row { padding-left: 0; padding-right: 0; }
+    .article-body p { font-size: 1rem; }
+    .article-body img, .article-body iframe, .article-body table { max-width: 100%; height: auto; }
+    .article-body pre { overflow-x: auto; }
+}
+
+/* ---------- About ---------- */
+@media (max-width: 767.98px) {
+    .about-hero { padding-top: 32px; }
+    .about-hero__title { font-size: 28px; line-height: 36px; }
+    .about-story { padding: 40px 0; }
+    .about-story__heading { font-size: 22px; }
+}
+
+/* ---------- Contact ---------- */
+@media (max-width: 991.98px) {
+    .contact .row > [class*="col-"] + [class*="col-"] { margin-top: 32px; }
+}
+
+@media (max-width: 575.98px) {
+    .contact { padding: 40px 0 48px; }
+    .contact-head { margin-bottom: 36px; }
+    .contact-head__text { font-size: 15px; line-height: 26px; }
+}
+
+/* ---------- Auth pages (login / register / forgot / otp / reset) ---------- */
+@media (max-width: 575.98px) {
+    .auth-card { padding: 2rem 1.25rem; border-radius: 12px; }
+    body > .text-center, .brand-title { padding: 0 16px; }
+}
+
+/* ---------- Long text / comments never break the layout ---------- */
+.article-body, .comment-text, .comment-author, .post-hero-title, .card__title { overflow-wrap: anywhere; }
+.comment-item > div:last-child { min-width: 0; }
+.comment-textarea { max-width: 100%; }
+
+/* Bootstrap's default ul padding must not indent nav / footer lists */
+.site-header__menu, .site-footer__links, .popular { padding-left: 0; margin-bottom: 0; }

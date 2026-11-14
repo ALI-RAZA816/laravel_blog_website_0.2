@@ -1,0 +1,465 @@
+/* ============================
+   Create Post Page Specific
+   ============================ */
+body {
+    background-color: #f4f5f7;
+    font-family: 'Inter', sans-serif;
+    color: #111;
+}
+
+h2, h3, .serif-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Main Layout Grid */
+.editor-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.editor-main {
+    flex: 1;
+    min-width: 0; /* Prevents flexbox overflow */
+}
+
+.editor-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+/* ============================
+   Main Editor Area
+   ============================ */
+.post-title-input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 1.5rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.post-title-input::placeholder {
+    color: #9ca3af;
+}
+
+.post-title-input:focus {
+    border-color: #111;
+}
+
+/* WYSIWYG Editor Box */
+.editor-box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Toolbar */
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.toolbar-divider {
+    width: 1px;
+    height: 20px;
+    background-color: #e5e7eb;
+    margin: 0 0.25rem;
+}
+
+.editor-toolbar i {
+    color: #4b5563;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.editor-toolbar i:hover {
+    color: #111;
+}
+
+.editor-toolbar select {
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    color: #4b5563;
+    cursor: pointer;
+    outline: none;
+    padding-right: 1rem;
+    appearance: none;
+}
+
+/* Textarea */
+.editor-textarea {
+    width: 100%;
+    min-height: 400px;
+    border: none;
+    padding: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    resize: vertical;
+    outline: none;
+}
+
+.editor-textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Editor Footer */
+.editor-footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    background: #fff;
+}
+
+/* ============================
+   Sidebar Widgets
+   ============================ */
+.widget-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.widget-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Featured Image Upload */
+.image-upload-box {
+    border: 1px dashed #d1d5db;
+    border-radius: 8px;
+    background: #f9fafb;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.image-upload-box:hover {
+    background: #f3f4f6;
+}
+
+.image-upload-box i {
+    font-size: 2rem;
+    color: #9ca3af;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.image-upload-box p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Form Elements */
+.widget-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.widget-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.widget-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.widget-select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    outline: none;
+}
+
+.widget-input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+}
+
+.widget-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Status and Visibility Rows */
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: 500;
+}
+
+.status-row:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================
+   Toggle Switch (UPDATED)
+   ============================ */
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Default (Draft / OFF) */
+.toggle-track {
+    width: 36px;
+    height: 20px;
+    background-color: #d1d5db;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.25s;
+}
+
+.toggle-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: left 0.25s;
+}
+
+/* ON (Published) */
+.toggle-switch.active .toggle-track {
+    background-color: #111;
+}
+
+.toggle-switch.active .toggle-thumb {
+    left: 18px;
+}
+
+/* Label */
+.toggle-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6b7280;
+    transition: color 0.25s;
+}
+
+.toggle-switch.active .toggle-label {
+    color: #111;
+}
+
+.status-value {
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: 500;
+}
+
+.status-value.muted {
+    color: #6b7280;
+    font-weight: 400;
+}
+
+/* Publish Button */
+.btn-publish {
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.btn-publish:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .editor-layout {
+        flex-direction: column;
+    }
+    .editor-sidebar {
+        width: 100%;
+    }
+}
+
+/* 1. Editor ka poora wrapper (border aur background) */
+.note-editor.note-frame {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+}
+
+/* 2. Toolbar ka background (jo aapko sab se zyada chahiye) */
+.note-editor .note-toolbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 6px 8px !important;
+}
+
+/* 3. Editor area (jahan aap likhte hain) ka background */
+.note-editor .note-editable {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    min-height: 250px; /* Apni pasand ke mutabiq */
+}
+
+/* 4. Code view (HTML view) ka background */
+.note-editor .note-codable {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}
+
+/* 5. Toolbar ke buttons (normal, hover, aur active state) */
+.note-editor .note-toolbar .note-btn {
+    background-color: #ffffff !important;
+    border-color: transparent !important;
+    color: #374151 !important;
+}
+
+.note-editor .note-toolbar .note-btn:hover {
+    background-color: #f3f4f6 !important;
+}
+
+.note-editor .note-toolbar .note-btn.active {
+    background-color: #e5e7eb !important;
+}
+
+/* 6. Dropdown menus (Format, Insert waghera) */
+.note-editor .note-dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+/* 7. Status bar (agar enable ho) */
+.note-editor .note-statusbar {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+/* 8. Focus hone par border ka rang (optional) */
+.note-editor.note-frame.focus {
+    border-color: #93c5fd !important;
+    box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3) !important;
+}
+
+/* Label ke tor par use hone par */
+.image-upload-box {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-upload-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Jab image aa jaye to padding kam karein taake preview bara dikhe */
+.image-upload-box.has-image {
+    padding: 0;
+    border-style: solid;
+    background: #fff;
+}
+
+/* Container */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Har tag chip */
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #f3f4f6;
+    color: #111827;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 50px;
+    border: 1px solid #e5e7eb;
+    transition: background-color 0.2s, border-color 0.2s;
+    user-select: none;
+}
+
+/* Hover par thora dark */
+.tag-chip:hover {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+}
+
+/* Remove (×) icon */
+.tag-chip .tag-remove {
+    font-size: 0.7rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.tag-chip .tag-remove:hover {
+    color: #dc2626;
+}
